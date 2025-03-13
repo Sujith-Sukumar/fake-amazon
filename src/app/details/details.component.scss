@@ -1,0 +1,176 @@
+.container {
+    font-family: 'Amazon Ember', sans-serif;
+  }
+  .product-title{
+      font-size: 24px;
+      line-height: 32px;
+  }
+    .main-image {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      overflow: hidden;
+      // cursor: crosshair;
+    }
+    .main-image img {
+      width: 100%;
+      height: 100vh;
+     
+
+    }
+    .top-right-div {
+      position: absolute;
+      top: 10px;
+      right: 0;
+      background-color: #FFFFFF;
+      width: 240px;
+      height: 400px;
+      margin-top: 58px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+    
+    .sponsored-section img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .sponsored-section {
+      margin-top: 10px;
+    }
+  .icon-img {
+    width: 35px;
+    height: 35px;
+  }
+  .small{
+    font-size: 13px;
+  }
+  .container-fluid {
+    // display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    width: 100%;
+  }
+  .hov:hover{
+    color:white;
+    background-color: orange;
+  }
+  .hov{
+    
+    background-color: white;
+    color: orange;
+    border: 1px solid orange;
+  }
+  .left-panel {
+    height: 100vh;
+    overflow: hidden; 
+  }
+  .scrollable-content {
+    height: 100vh; 
+    overflow-y: auto; 
+    padding: 20px;
+    background-color: #FFFFFF; 
+  }
+  .product-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .icon-img {
+    width: 35px;
+    height: 35px;
+  }
+  hr.custom-hr {
+    border: 1px solid #ddd;
+    width: 340px;
+    margin: 10px auto;
+  }
+  .icon-section{
+    margin-right: 300px;
+  }
+  .img-thumbnail{
+    object-fit: cover; 
+    border-radius: 8px; 
+    transition: transform 0.2s ease-in-out; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .img-thumbnail:hover{
+    transform: scale(1.1); 
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); 
+  }
+/* Modal background styling */
+.modal {
+  position: fixed;
+  top: 10%; 
+  left: 50%;
+  transform: translate(-50%, 0); 
+  width: 90%; /* Ensure modal fits within the viewport */
+  height: auto;
+  display: none; /* Initially hidden */
+  z-index: 1050;
+  overflow: hidden;
+}
+
+/* Modal visibility */
+.modal.show {
+  display: block; /* Display modal when visible */
+}
+
+/* Modal dialog */
+.modal-dialog {
+  position: relative;
+  max-width: 600px; /* Restrict maximum width */
+  width: 90%; /* Adjust for smaller screens */
+  height: auto; /* Let content define the height */
+  max-height: 300px; /* Limit the maximum height */
+  margin: auto; /* Center modal vertically */
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 4px 15px rgba(4, 0.4, 0.4, 0.8); /* Add box shadow for depth */
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Modal header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #40e387; /* Header background color */
+  color: white; /* Text color for contrast */
+  border-bottom: 1px solid #dee2e6;
+}
+
+.modal-header .close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer; /* Indicate clickable element */
+}
+
+/* Modal body */
+.modal-body {
+  padding: 1rem;
+  text-align: center;
+}
+
+.modal-body img {
+  width: 30%; /* Adjust image width */
+  max-height: 120px; /* Restrict image height */
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+/* Optional styling for text */
+.modal-body p {
+  margin: 0.5rem 0; /* Add spacing between text elements */
+  font-size: 1rem; /* Adjust font size */
+  color: #333; /* Text color */
+}

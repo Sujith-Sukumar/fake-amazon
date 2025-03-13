@@ -1,0 +1,113 @@
+<div class="container my-5">
+    <div class="row">
+      <!-- Left Column: Address Form -->
+      <div class="col-lg-8 col-md-7 mb-4">
+        <h2 style="font-size: 18px;font-weight: 700; color: #c45500;"> <span>1</span> Enter New Shipping Address</h2>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="form-section mb-3">
+            <label for="country" class="form-label">Country/Region</label>
+            <select id="country" name="country" class="form-select" formControlName="country">
+              <option value="India">India</option>
+              <option value="USA">United States</option>
+              <option value="UK">United Kingdom</option>
+              <option value="Canada">Canada</option>
+            </select>
+            <div class="form-error" id="countryError"></div>
+          </div>
+
+          <div class="form-section mb-3">
+            <label for="fullName" class="form-label">Full Name (First and Last Name)</label>
+            <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Enter your full name" formControlName="fullName">
+            <div class="form-error" id="fullNameError"></div>
+          </div>
+
+          <div class="form-section mb-3">
+            <label for="mobile" class="form-label">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" class="form-control" placeholder="Enter your mobile number" formControlName="mobile">
+            <div class="form-error" id="mobileError"></div>
+            <small class="form-text text-muted">May be used to assist delivery</small>
+          </div>
+
+          <div class="form-section mb-3">
+            <label for="pincode" class="form-label">Pincode</label>
+            <input type="text" id="pincode" name="pincode" class="form-control" placeholder="6 digits PIN code" maxlength="6" formControlName="pincode">
+            <div class="form-error" id="pincodeError"></div>
+          </div>
+
+          <div class="form-section mb-3">
+            <label for="address" class="form-label">Flat, House no., Building, Company, Apartment</label>
+            <input type="text" id="address" name="address" class="form-control" placeholder="Enter your address" formControlName="address">
+            <div class="form-error" id="addressError"></div>
+          </div>
+
+          <div class="form-section mb-3">
+            <label for="area" class="form-label">Area, Street, Sector, Village</label>
+            <input type="text" id="area" name="area" class="form-control" placeholder="Area, Street, etc." formControlName="area">
+          </div>
+
+          <div class="form-section mb-3">
+            <label for="landmark" class="form-label">Landmark (optional)</label>
+            <input type="text" id="landmark" name="landmark" class="form-control" placeholder="e.g., Near Apollo Hospital" formControlName="landmark">
+          </div>
+
+          <div class="form-section mb-3">
+            <label for="town" class="form-label">Town/City</label>
+            <input type="text" id="town" name="town" class="form-control" placeholder="Enter your town or city" formControlName="town">
+          </div>
+
+          <div class="form-section mb-3">
+            <label for="state" class="form-label">State</label>
+            <select id="state" name="state" class="form-select" formControlName="state">
+              <option value="Choose">Choose a state</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Delhi">Kerala</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Karnataka">Karnataka</option>
+            </select>
+          </div>
+
+          <div class="form-section mb-3">
+            <label for="addressType" class="form-label">Address Type</label>
+            <select id="addressType" name="addressType" class="form-select" formControlName="addressType">
+              <option value="Home">Home</option>
+              <option value="Work">Work</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-section mb-3">
+            <label for="deliveryInstructions" class="form-label">Delivery Instructions (Optional)</label>
+            <textarea id="deliveryInstructions" name="deliveryInstructions" class="form-control" placeholder="Add preferences, notes, access codes, and more" formControlName="deliveryInstructions">
+
+            </textarea>
+          </div>
+
+          <div class="form-section">
+            <button type="submit" class="btn btn-warning"><a routerLink="/shippingaddress" style="text-decoration: none; color: black;">Use this Address</a></button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Right Column: Order Summary -->
+      <div class="col-lg-4 col-md-5">
+        <div class="order-summary">
+          <h5>Order Summary</h5>
+          <table>
+            <tr>
+              <th>Items</th>
+              <td>{{searchddata.item}}</td>
+            </tr>
+            <tr>
+              <th>Brand</th>
+              <td>{{searchddata.brand}}</td>
+            </tr>
+            <tr>
+              <th><strong>Order Total</strong></th>
+              <td><strong>{{searchddata.price}}</strong></td>
+            </tr>
+          </table>
+          <p class="mt-3">Choose a shipping address and payment method to calculate shipping, handling, and tax.</p>
+        </div>
+      </div>
+    </div>
+  </div>

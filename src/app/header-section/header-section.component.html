@@ -1,111 +1,115 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+  integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <header class="header">
-    <div class="container container-header">
-         <div class="logo-container  border-white">
-            <div class="logo"></div>
-            <span class="dotin">.in</span>
-         </div>
-
-         <div class="address-container border-white">
-            <p class="hello">hello</p>
-            <div class="icon-address">
-               <a routerLink=""></a>
-                <i class="fa-solid fa-location-dot icon-location"></i>
-                <p>Select your address</p>
-            </div>
-         </div>
-
-         <div class="search-container">
-            <select class="search-select">
-                <option>All</option>
-                  <option><a routerLink="">1</a></option>
-                  <option><a routerLink="">2</a></option>
-                  <option><a routerLink="">3</a></option>
-                  <option><a routerLink="">4</a></option>
-                  <option><a routerLink="">5</a></option>
-                  <option><a routerLink="">6</a></option>
-                  <option><a routerLink="">7</a></option>
-                  <option><a routerLink="">8</a></option>
-            </select>
-            <input type="text" placeholder="Search Amazon.in" class="search-input">
-            <div class="search-icon">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-         </div>
-
-         <div class="language-container border-white">
-            <p>English</p>
-            <a routerLink=""></a>
-            <div class="laguage-image">
-               <img src="data:image/png;base64,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">
-            </div>
-         </div>
-
-         <div class="login-container border-white">
-            <p>Hello,<span>Sign in</span></p>
-            <p class="accout">Account & List</p>
-            <a routerLink=""></a>
-         </div>
-
-         <div class="return-order-container border-white">
-            <p>Return <span class="order">& Order</span></p>
-            <a routerLink=""></a>
-         </div>
-
-         <div class="cart-container border-white">
-            <a routerLink=""></a>
-            <i class="fa-solid fa-cart-arrow-down"></i>
-            Cart
-         </div>
+  <div class="container container-header">
+    <div class="logo-container  border-white">
+      <div class="logo"></div>
+      <span class="dotin">.in</span>
     </div>
+
+    <div class="address-container border-white">
+      <p class="hello">hello</p>
+      <div class="icon-address">
+        <a routerLink=""></a>
+        <i class="fa-solid fa-location-dot icon-location"></i>
+        <p>Select your address</p>
+      </div>
+    </div>
+
+    <div class="search-container">
+      <select class="search-select">
+        <option>All</option>
+        <option><a routerLink="">1</a></option>
+        <option><a routerLink="">2</a></option>
+        <option><a routerLink="">3</a></option>
+        <option><a routerLink="">4</a></option>
+        <option><a routerLink="">5</a></option>
+        <option><a routerLink="">6</a></option>
+        <option><a routerLink="">7</a></option>
+        <option><a routerLink="">8</a></option>
+      </select>
+      <input type="text" placeholder="Search Amazon.in" class="search-input">
+      <div class="search-icon">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+    </div>
+
+    <div class="language-container border-white">
+      <p>English</p>
+      <a routerLink=""></a>
+      <div class="laguage-image">
+        <img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAmVBMVEX/aCAEajj/////WgAAWhgXcEEHA40AAIoAAH8AAIgAAIQAAHkAAIUAAH0AAIH5+fzx8fdubbDFxd61tdXs7PTl5fDb2+uFhbu+vtrU1OZ1dLN8e7ZjY6vNzeKZmMWEg7o/Ppyop81QT6OxsdJdXKgpKJVMS6Fwb7FNTKEbGZIyMJihocqRkMGbm8ZFRJ5XVqY1NJkXFJEfHpM+ERAcAAAHlUlEQVR4nO2b25KjOBJAa7W7lkCAuN8pjI3LXb5O1/9/3GYK2+MqRT/sw0gd1Xk6TGNgOuQzqZRAycsLQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRDE/8m/ia+8MOIr5MTkd3Cimu2pS/qkO20b5box7DdwUp4OUeB5HPG8IDqcGtdNcutEHd99zlfPcO7/PLqNFqdOToHHtQa+8nzf9/QefPeCk8tmOXSSedqI569PlzBTucrCt9MazKAVL3PXMGdO1MbnGCLeUSmmUkgsjKWwp44eBgv3N846kCsnpf7hUdtzxgZ9pNZb2Od9G2ldpaO2OXJS46/21ssQk+qImHCDAQM0Fw+N1W4a58bJNsI4SFge47d4i9tOn1gO5CzBOIq2TlrnxEmtlYjTLThYgpv5sYdHK6GlOIkUF04aVLJTOewWeniZsfPs4KO0mKyATa52KMXFBM6BEwVDMN/ly5cEdZzRjAef7Iznl2BhOUjhnoPRx4GTN/ipXLFlAlJsYDNcYSPhc8UhaFPoMxlT0H34m/0G2neyDaDnCMillf7aQ8pQEj8QEfipe30czsYCek9gP89ad4I9x0u0Dz0rywVsecbyMGfZCs4L7FUKI4dVieei91h3UsHPvCy76if+/ATiIplZGZZshkzSYzbJf95EXEBgZbuJtp0of7Xyy1uCzSOYquYyZZNgTdgwMbFUwrkyul9Q4uW2A8W2k1cIk47l05JHS/DB9gFrRD2IoRYNC/Ywr5XLrL6YctZBoLxabqNtJziUYO/Y7nUopHKCjJKwqE+jtI9YAtlkknqCn+8xuyY4SFluo2UnAww6wQr31KZHK5OsWCuaC29Ewy+NaFklcXKb98t9Mcf/YLDbSMtOKugK022/FkmOk/gkjjapKOFPuoniRFQYI+I+q5+gs1nOspadfPCV//iiegk9KBFdKosIxp2okGkHHSlvZf93XvVX/MNuI+06ieEHvqkhjW/fU0/s407W3VgNH0M1drXs4r0I0vv16aBg2hvFv/oH/xHsOoF0wmEUUdtkfh10KOxFlNayOJTdtWsOhazTSOzxhBrOc7KFa1657YRi1wkmhx/ahcqukidTw8qrbIvDFHDOg+lQtHJTsmZKuLxmy4U/nlKQHew6gRS7Ch//0+tZCLGui2o3+Xodw592Y1Gv4ej8eHAyhCvbSdauE5htPHKFpk5WIhrL4La4E5RjJHjy6UlSCv1tb7WVdp30n4advGyGtCnLYbwve/FxKMsmhYP5p4Gnt9pKu05mcBKX9bGaD34oZRiKCDrKz+vDyfUdvkciDEMZRrvreK4bHKtmq610GCcsLiAmIE7S7uGkS0t9rIj/mDiBfOI9JwuVzVz4p6d8cvIFn7PnO+Ha+9755NO4o7IN9J0fadEdJl+vE/vToS1hgi/CH9u7lm8/7uD8RD9Bg2nbm3xvtyUbLnIsDxMWW3jToRzlZWDltvuQl2WtR12/+fzkNo+Np6Q/LqsUvfCHTBa7srqO5a6Q2eCL5Wanmfpkir//PDaOVvwC9zv3jlH7olOtTNtqHN6Hsdqncq864d9zjhoGdfnm9zv6vviRQNUV7vggUsb6cV9cj6JncFd4/fui735frJ+f3KuQshCMsDFs4+ha6+cn9TWK23CEeOrC2xKGOn775ycN3Nh4+llifNljjzjKE0tEudbP2dalSNhJHvF0e9EdhntwG2R5gdT289gVX/EW/p5a/ZNruWWFaFmUpFGaRKwVBdtKnU7iFkebFq5fWW6jbSdnD53k07JY0UgYURLv6bm9l8DoJJfAwKvAiXe23Ebr6zsBZNnmNo4UUYHrO8PT+s6A6zv6OBJDX+PBd1/fYScIlPWyG7+jG1z4e1oHxGXB2xlgDWFivQbS/ho6rhf3MLbAUKzXiyPY8FqvF9eYfaP8cW7scb3YegvtO8l8LFV71BXM6Ze6gnR5MIB1BVj05tsvCnVQf3LFpb34Xn+CBnT9Schu9Sfzkkzqpf7kar+BLuqU8Kd+3LKorlN6fdQp4dLwvU6p+FiKd6zjop6tjFCKQivlUs+Gm91jr8Yl9CJ+h6siFzWyTuoe06XusfpU99g/9p7qHtNf/RP/JG7qYzOMlEd9bK6DRdfHZnoud6uP5ZGbontHddSprqP+a3kuYtZRD3/pOmonUeK63t7v5+Brvb0K5t7/E+vtsTz49l7Ga6xYXOv3MuqYqfh8ey9j/uPeywBqfnt/51BdxDYu4q24VIfb+zvc0fsHiNP3vM7eL97zsl7C9gnH70hOO9/78j6g5+/sPqY3cP7eaPF6eX5v1L+8ukqtD5w7QcrsXLX7tjpnzn0gv4WT3wxyYvLyH+IrL/8ivkJOTMiJCTkxIScm5MSEnJiQExNyYkJOTMiJCTkxIScm5MSEnJiQExNyYkJOTMiJCTkxIScm5MSEnJiQExNyYkJOTMiJCTkxIScm5MSEnJiQExNyYkJOTMiJCTkxIScm5MSEnJiQExNyYkJOTMiJCTkxIScm5MSEnJiQExNyYkJOTMiJCTkxIScm5MSEnJiQExNyYkJOTMiJyct/ia/8D5ZrPdZFvrNOAAAAAElFTkSuQmCC">
+      </div>
+    </div>
+
+    <div class="login-container border-white">
+      <p>Hello,<span>Sign in</span></p>
+      <p class="accout">Account & List</p>
+      <a routerLink=""></a>
+    </div>
+
+    <div class="return-order-container border-white">
+      <a routerLink="/orderedproduct"><p>Return <span class="order">& Order</span></p></a>
+      
+    </div>
+
+    <div class="cart-container border-white">
+      <a routerLink="/cart" style="text-decoration: none; color: white;">
+      <i class="fa-solid fa-cart-arrow-down" style="color: orange;"></i>
+      Cart
+    </a>
+    </div>
+  </div>
 </header>
 <!-- Navigation -->
 <nav class="nav">
-   <div class="container container-nav">
-      <ul>
-         <li class="border-white" (click)="toggleSidebar()">
-            <span class="open-nav-slider">
-              <i class="fa-solid fa-bars"></i> All
-            </span>
-          </li>
-   <li class="border-white"><a routerLink="">Fresh</a></li>
-   <li class="border-white"><a routerLink="">MX player</a></li>
-   <li class="border-white"><a routerLink="">Sell</a></li>
-   <li class="border-white"><a routerLink="">Gift Card</a></li>
-   <li class="border-white"><a routerLink="">Amazon pay</a></li>
-   <li class="border-white"><a routerLink="">Buy Again</a></li>
-   <li class="border-white"><a routerLink="">Coupons</a></li>
-   <li class="border-white"><a routerLink="">Gift Idea</a></li>
-   <li class="border-white"><a routerLink="">Helth,Household & Personal Care</a></li>
-   <li class="border-white"><a routerLink="">AmazonBsics</a></li>
-   <li class="border-white"><a routerLink="">Book</a></li>
-   <li class="border-white"><a routerLink="">Tody's Deals</a></li>
-</ul>
-   </div>
+  <div class="container container-nav">
+    <ul>
+      <li class="border-white" (click)="toggleSidebar()">
+        <span class="open-nav-slider">
+          <i class="fa-solid fa-bars"></i> All
+        </span>
+      </li>
+      <li class="border-white"><a routerLink="">Fresh</a></li>
+      <li class="border-white"><a routerLink="">MX player</a></li>
+      <li class="border-white"><a routerLink="">Sell</a></li>
+      <li class="border-white"><a routerLink="">Gift Card</a></li>
+      <li class="border-white"><a routerLink="">Amazon pay</a></li>
+      <li class="border-white"><a routerLink="">Buy Again</a></li>
+      <li class="border-white"><a routerLink="">Coupons</a></li>
+      <li class="border-white"><a routerLink="">Gift Idea</a></li>
+      <li class="border-white"><a routerLink="">Helth,Household & Personal Care</a></li>
+      <li class="border-white"><a routerLink="">AmazonBsics</a></li>
+      <li class="border-white"><a routerLink="">Book</a></li>
+      <li class="border-white"><a routerLink="">Tody's Deals</a></li>
+    </ul>
+  </div>
 </nav>
 <!-- Slidebar navigation -->
 <div class="slidebar-container-navigation" [class.slidebar-show]="isSidebarVisible">
-   <div class="sidebar-left-part">
-     <div class="sidebar-top">
-       <i class="fa-solid fa-circle-user"></i>
-       <h2>Hello, sign in<span></span></h2>
-     </div>
- 
-     <div class="sidebar-item">
-       <h2>Trending</h2>
-       <p> <a routerLink="">Best Sellers</a></p>
-       <p><a routerLink="">New Releases</a></p>
-       <p><a routerLink="">Movers and Shakers</a></p>
-     </div>
-     <div class="sidebar-item">
-       <h2>Digital Content and Devices</h2>
-       <p> <a routerLink=""></a></p>
-       <p><a routerLink=""></a></p>
-       <p><a routerLink=""></a></p>
-     </div>
-     <div class="sidebar-item">
+  <div class="sidebar-left-part">
+    <div class="sidebar-top">
+      <i class="fa-solid fa-circle-user"></i>
+      <h2>Hello, sign in<span></span></h2>
+    </div>
+
+    <div class="sidebar-item">
+      <h2>Trending</h2>
+      <p> <a routerLink="">Best Sellers</a></p>
+      <p><a routerLink="">New Releases</a></p>
+      <p><a routerLink="">Movers and Shakers</a></p>
+    </div>
+    <div class="sidebar-item">
+      <h2>Digital Content and Devices</h2>
+      <p> <a routerLink=""></a></p>
+      <p><a routerLink=""></a></p>
+      <p><a routerLink=""></a></p>
+    </div>
+    <div class="sidebar-item">
       <h2>Shop by Category</h2>
       <p> <a routerLink=""></a></p>
       <p><a routerLink=""></a></p>
@@ -123,29 +127,73 @@
       <p><a routerLink=""></a></p>
       <p><a routerLink=""></a></p>
     </div>
-   </div>
- 
-   <button id="slidebar-navigation-close" (click)="toggleSidebar()">
-     <i class="fa-solid fa-xmark"></i>
-   </button>
- </div>
+  </div>
+
+  <button id="slidebar-navigation-close" (click)="toggleSidebar()">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+</div>
 
 <!--image-slider-->
 <section>
-    <div class="image-container">
-      <div class="image-list" #imageList>
-        <div class="image-item" *ngFor="let image of images">
-          <img [src]="image" alt="Slider Image">
-        </div>
-      </div>
-      <div class="image-btn-container">
-        <button class="slider-btn" id="slide-btn-left" #slideBtnLeft>
-          <i class="fa-solid fa-angle-left"></i>
-        </button>
-        <button class="slider-btn" id="slide-btn-right" #slideBtnRight>
-          <i class="fa-solid fa-angle-right"></i>
-        </button>
+  <div class="image-container">
+    <div class="image-list" #imageList>
+      <div class="image-item" *ngFor="let item of filterByType('firstcarousel')">
+        <img [src]="item.image" alt="Slider Image" >
       </div>
     </div>
-  </section>
+    <div class="image-btn-container">
+      <button class="slider-btn" id="slide-btn-left" #slideBtnLeft>
+        <i class="fa-solid fa-angle-left"></i>
+      </button>
+      <button class="slider-btn" id="slide-btn-right" #slideBtnRight>
+        <i class="fa-solid fa-angle-right"></i>
+      </button>
+    </div>
 
+    <div class="amazon-container">
+      <div class="deal-section furniture-section">
+        <h2 class="deal-title">Explore More</h2>
+        <div class="furniture-grid" >
+          <div class="furniture-item" *ngFor="let item of filterByType('firstrow-firstpart') ">
+            <img [src]="item.image" alt="{{ item.item }}" class="furniture-imagesec" (click)="navigatetodetails(item.id)">
+            <p class="furniture-description">{{ item.description }}</p>
+          </div>
+        </div>
+        <a href="#" class="deal-button explore-button">Explore all</a>
+      </div>
+
+      <div class="deal-section furniture-section">
+        <h2 class="deal-title"> Keep shopping more</h2>
+        <div class="furniture-grid">
+          <div class="furniture-item" *ngFor="let item of filterByType('firstrow-secondpart')">
+            <img [src]="item.image" alt="{{ item.description }}" class="furniture-imagesec" (click)="navigatetodetails(item.id)">
+            <p class="furniture-description">{{ item.description }}</p>
+          </div>
+        </div>
+        <a href="#" class="deal-button explore-button">Explore all</a>
+      </div>
+      <div class="deal-section furniture-section">
+        <h2 class="deal-title">Up to 60% off | Furniture & mattresses</h2>
+        <div class="furniture-grid">
+          <div class="furniture-item" *ngFor="let item of filterByType('firstrow-thirdpart')">
+            <img [src]="item.image" alt="{{ item.description }}" class="furniture-imagesec" (click)="navigatetodetails(item.id)">
+            <p class="furniture-description">{{ item.description }}</p>
+          </div>
+        </div>
+        <a href="#" class="deal-button explore-button">Explore all</a>
+      </div>
+      <div class="deal-section furniture-section">
+        <h2 class="deal-title">Up to 40% off | Home Accessories</h2>
+        <div class="furniture-grid">
+          <div class="furniture-item" *ngFor="let item of filterByType('firstrow-forthpart')">
+            <img [src]="item.image" alt="{{ item.description }}" class="furniture-imagesec" (click)="navigatetodetails(item.id)">
+            <p class="furniture-description">{{ item.description }}</p>
+          </div>
+        </div>
+        <a href="#" class="deal-button explore-button">Explore all</a>
+      </div>
+    </div>
+  </div>
+
+</section>

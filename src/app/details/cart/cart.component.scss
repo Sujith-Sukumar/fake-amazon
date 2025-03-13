@@ -1,0 +1,56 @@
+.cart-items-container {
+  display: flex; /* Enable flexbox layout */
+  flex-wrap: wrap; /* Allow items to wrap to next line */
+  justify-content: space-between; /* Space out the items evenly */
+  gap: 10px; /* Spacing between items */
+  margin: 30px;
+}
+
+.cart-info {
+  display: flex; /* Align items in a row */
+  align-items: center; /* Center items vertically */
+  width: 300px; /* Fixed width for each item */
+  height: 150px; /* Fixed height */
+  padding: 10px;
+  border: 1px solid #ccc; /* Border for item separation */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  margin-bottom: 10px; /* Spacing between rows */
+  transition: transform 0.3s ease-in-out; /* Smooth scale transition */
+}
+
+.cart-info:hover {
+  transform: scale(1.05); /* Scale up the item slightly on hover */
+}
+
+.cart-item-image {
+  width: 120px; /* Fixed image width */
+  height: 120px; /* Fixed image height */
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded image corners */
+  margin-right: 10px; /* Space between image and text */
+}
+
+.cart-details {
+  flex: 1; /* Take up remaining space */
+  text-align: left; /* Align text to the left */
+}
+
+.cart-details p {
+  margin: 5px 0; /* Adjust spacing between text */
+  font-size: 14px; /* Adjust font size */
+}
+
+.remove-button {
+  background: none; /* Remove button background */
+  border: none; /* Remove border */
+  color: #ff0000; /* Red color for the 'x' symbol */
+  font-size: 18px; /* Larger font size for symbol */
+  cursor: pointer; /* Show pointer on hover */
+  transition: transform 0.2s ease-in-out; /* Smooth scale transition for button */
+}
+
+.remove-button:hover {
+  color: #cc0000; /* Darken color on hover */
+  transform: scale(1.2); /* Scale up the 'x' symbol on hover */
+}

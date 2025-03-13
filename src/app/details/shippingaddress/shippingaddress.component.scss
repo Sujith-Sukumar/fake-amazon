@@ -1,0 +1,25 @@
+.confirmation-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+  }
+  .confirmation-box {
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .confirmation-icon {
+    color: #198754;
+    font-size: 4rem;
+  }
+  .btn-home {
+    background-color: #198754;
+    color: white;
+  }
+  .btn-home:hover {
+    background-color: #157347;
+  }

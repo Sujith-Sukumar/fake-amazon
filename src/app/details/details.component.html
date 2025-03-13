@@ -1,0 +1,114 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 position-sticky left-panel" style="top: 0;">
+        <div class="d-flex">
+          <div class="d-flex flex-column  thumbnails">
+            <!--
+            <img *ngFor="let thumbnail of product" [src]="thumbnail.src" [alt]="thumbnail.alt" class="img-thumbnail mb-2" />
+          -->
+          </div>
+          <div class=" p-3 flex-grow-1">
+            <img  [src]="searchddata.image" alt="searchddata.item" class="img-fluid w-100" />
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-6 scrollable-content position-relative">
+        <div class="top-right-div border rounded p-3">
+          <p class="small mb-2">
+            <i class="bi bi-geo-alt"></i> Delivering to {{ searchddata.deliveringplace }} {{ searchddata.pincode }}
+            <a href="#" class="text-primary">Update location</a>
+          </p>
+          <button class="btn btn-outline-primary w-100 mb-2">Add to Wish List</button>
+          <div class="sponsored-section border-top pt-2">
+            <p class="text-muted small mb-1">Sponsored</p>
+            <div class="d-flex align-items-center">
+              <img [src]="searchddata.image"  class="img-thumbnail me-2" alt="Sponsored" style="width: 60px;" />
+              <div>
+                <p class="small fw-bold mb-1">{{ searchddata.add }}</p>
+                <p class="mb-0 text-warning small">&#9733; &#9733; &#9733; &#9733; &#9734; ({{ searchddata.reviews }})</p>
+                <p class="text-danger small fw-bold mb-0">
+                  ₹{{searchddata.price|number}} <del class="text-muted">₹{{searchddata.discountableprice|number}}</del>
+                </p>
+              </div>
+            </div>
+          </div>
+  
+           
+          <button style="margin-top: 40px;" class="btn hov btn-warning w-100" (click)="navigateCart()" (click)="openModal()">Add to Cart</button>
+          <div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show': isModalVisible}" [ngStyle]="{'display': isModalVisible ? 'block' : 'none'}" (click)="closeModal()">
+            <div class="modal-dialog" role="document" (click)="$event.stopPropagation()">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">ITEM ADDED TO CART</h5>
+                  <button type="button" class="close" (click)="closeModal()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <img [src]="searchddata.image" alt="Item Image" class="img-fluid">
+                  <p><strong>Item Name:</strong> {{ searchddata.item }}</p>
+                  <p><strong>Price:</strong> {{ searchddata.price | currency }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <button class="btn btn-secondary w-100 mt-2" (click)="navigateToBuyNow()">Buy Now</button>
+  
+        </div>
+  
+        <div class="product-details mt-5">
+          <div style="width: 350px;height: 250px;">
+          <p class="product-title">{{ searchddata.name }}</p>
+        </div>
+          <p style="font-size: 14px; line-height: 24px; color: #0C59AC;">Visit the {{ searchddata.store }} Store</p>
+          <p style="font-size: 18px; font-weight: 500;">₹{{ searchddata.price | number }}</p>
+          <p>
+            <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+            <span style="color: #0450a1; font-size: 14px; margin-left: 20px;">{{ searchddata.reviews }} ratings</span>
+          </p>
+  
+        <hr style="width: 355px;"/>
+  <div class="icon-section d-flex justify-content-center align-items-center">
+    <div class="icon-item mx-3" *ngFor="let feature of iconimg.features">
+      <img [src]="searchddata.image" [alt]="feature.alt" class="icon-img mb-2" />
+      <p class="small text-primary">{{ feature.text }}</p>
+    </div>
+  </div>
+  <hr style="width: 600px;" />
+  
+          
+  
+  
+          <p *ngIf="searchddata.availability === 'Unavailable'" style="color: #cc1c13; font-size: 18px; line-height: 24px;">
+            Currently unavailable.
+          </p>
+          <p *ngIf="searchddata.availability === 'available'" style="color: #007600; font-size: 18px; line-height: 24px;">
+            Currently Available.
+          </p>
+  
+          <table class="table table-bordered">
+            <tr *ngFor="let detail of getfilteredkeys()">
+              <!-- <ng-container *ngIf="detail.key !== 'About'"> -->
+                <th>{{ detail[0] }}</th>
+                <td>{{ detail[1] }}</td>
+              <!-- </ng-container> -->
+            </tr>
+          </table>
+  
+          <hr />
+          <p style="font-size: 16px; font-weight: 700;">About this item</p>
+          <div style="width: 100%;height: 145vh;">
+          <ul *ngIf="searchddata.About?.trim()">
+            <li *ngFor="let item of searchddata.About.split('•')">
+              {{ item.trim() }}
+            </li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

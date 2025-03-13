@@ -1,138 +1,126 @@
-/* Main Container */
 .amazon-container {
   display: flex;
-  flex-wrap: nowrap; /* Ensures all sections stay in one row */
+  flex-wrap: wrap; /* Allows sections to stack on smaller screens */
   gap: 20px;
-  max-width: 1200px;
   margin: 0 auto;
+  // max-height: 500px;
   padding: 20px;
   background-color: #f7f7f7;
-  overflow-x: auto; /* Adds horizontal scroll for smaller screens */
+  overflow-x: hidden; /* Prevents horizontal scroll */
 }
 
-/* Prime Video Section */
-.prime-video-section {
-  flex: 2; /* Occupies more space */
-  position: relative;
-  // background-color: black;
-  color: white;
-  min-width: 300px;
-  overflow: hidden;
-}
-
-.prime-video-image {
-  width: 120vh;
-  height: auto;
-}
-
-.prime-video-content {
-  position: absolute;
-  bottom: 320px;
-  left: 20px;
-  z-index: 1;
-}
-
-.prime-video-title {
-  font-size: 1.2rem;
-  margin: 0;
-}
-
-.prime-video-name {
-  font-size: 1rem;
-  margin: 5px 0;
-}
-
-.prime-video-button {
-  margin-top: 10px;
-  color: white;
-  padding: 92px 12px;
-  font-size: 0.9rem;
-  border: transparent;
-  cursor: pointer;
-  background-color: transparent;
-  position: absolute;
-  top: 220px;
-}
-
-/* Deal Section */
-.deal-section {
-  flex: 1; /* All sections adjust equally */
+.prime-video-section, .deal-section {
+  flex: 1 1 calc(33.33% - 20px); /* 3 sections per row */
   background-color: white;
   padding: 20px;
   text-align: center;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  min-width: 250px; /* Ensures sections don't shrink too much */
+  min-width: 250px; /* Prevents shrinking too much */
 }
 
+.prime-video-section img, 
+.deal-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.prime-video-title,
 .deal-title {
   font-size: 1.2rem;
   margin-bottom: 10px;
 }
 
-.deal-image {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
+.prime-video-name,
+.furniture-description {
+  font-size: 1rem;
+  margin: 10px 0;
 }
+
+.prime-video-button {
+  margin-top: 10px;
+  color: white;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  background-color: #007185;
+  position: relative; /* Removed absolute for better layout */
+  top: 0; /* Reset position */
+}
+
+.furniture-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two images per row */
+  gap: 10px; /* Space between items */
+  margin-top: 10px;
+}
+
+.furniture-item {
+  display: flex;
+  flex-direction: column; /* Align content within the item */
+  align-items: center; /* Center align image and text */
+  justify-content: center;
+}
+
+.furniture-image {
+  width: 100%; /* Ensures the image fills its container */
+  height: 150px; /* Set a specific height for uniformity */
+   /* Ensures the image fits nicely within the dimensions */
+}
+
+.furniture-description {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  text-align: center; /* Center align description */
+}
+
 
 .deal-button {
   color: #007185;
   text-decoration: none;
   display: inline-block;
   margin-top: 10px;
-  margin-right: 190px;
-}
-
-/* Furniture Grid */
-.furniture-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.furniture-item {
-  text-align: center;
-}
-
-.furniture-image {
-  width: 100%;
-  height: auto;
-}
-
-.furniture-description {
-  font-size: 0.9rem;
-  margin-top: 5px;
-  text-align: left;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .amazon-container {
-    flex-wrap: wrap; /* Allows sections to stack in small screens */
+    gap: 15px;
   }
 
-  .deal-section, .prime-video-section {
-    flex: 1 1 100%; /* Full width on small screens */
-  }
-
-  .furniture-grid {
-    grid-template-columns: repeat(1, 1fr); /* Single column on smaller screens */
+  .prime-video-section, .deal-section {
+    flex: 1 1 calc(50% - 15px); /* 2 sections per row */
   }
 }
+
+@media (max-width: 768px) {
+  .prime-video-section, .deal-section {
+    flex: 1 1 100%; /* Stack sections */
+  }
+
+  .prime-video-button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+}
+
 
 /* Carousel Container */
 .carousel-container {
   max-width: 100%;
-  height: 50vh;
+  height: 40vh;
   margin: 20px auto;
   padding: 10px;
   overflow: hidden;
-  border: 1px solid #ddd;
+  border-top: 5px solid rgba(232, 228, 228, 0.897);
+  // border-bottom: 10px solid rgba(232, 228, 228, 0.897);
+
 }
 
 .carousel-title {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   margin-bottom: 10px;
 }
 
@@ -158,13 +146,13 @@
 
 .carousel-item {
   min-width: calc(100% / 6); /* Default for 6 items visible */
-  padding: 5px;
+  padding: 0px;
   text-align: center;
 }
 
 .carousel-image {
   max-width: 100%;
-  height: 300px;
+  height: 200px;
   display: block;
   padding: 10px;
   border-radius: 5px;
@@ -356,4 +344,112 @@ color: #7E93A4;
   .thumbnails {
     justify-content: space-around;  /* Space thumbnails evenly on mobile */
   }
+}
+.container-fluid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.card-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.item {
+  width: 45%;
+}
+
+.item img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+
+.item p {
+  font-size: 14px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+p {
+  font-family: Arial, sans-serif;
+}
+
+.explore-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #0073e6;
+  text-decoration: none;
+}
+
+.explore-link:hover {
+  text-decoration: underline;
+  color: #404040;
+}
+
+.sign-in {
+  text-align: center;
+}
+
+.sign-in-button {
+  padding: 10px 20px;
+  background-color: #ffd700;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.sign-in-button:hover {
+  background-color: #ffc107;
+}
+
+.calendar-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.coupon {
+  font-size: 14px;
+  color: #007600;
+  margin-top: 5px;
+}
+/* For Tablets */
+@media (max-width: 1199px) {
+    /* 2 columns */
+  }
+  .container-fluid {
+      grid-template-columns: repeat(4, 1fr);
+      /* 2 columns */
+  }
+
+
+/* For Mobile */
+@media (max-width: 767px) {
+  
+  .container-fluid {
+      grid-template-columns: repeat(2, 1fr);
+      /* 2 columns */
+  }
+  
 }

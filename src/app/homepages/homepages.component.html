@@ -1,28 +1,28 @@
 <div class="amazon-container">
   <!-- Prime Video Section -->
   <div class="prime-video-section">
-    <img [src]="recommendedVideo.image" alt="Prime Video" class="prime-video-image">
+    <img [src]="flatobj.id_100025.image" alt="Prime Video" class="prime-video-image" (click)="navigatetodetails(flatobj.id)">
     <div class="prime-video-content">
-      <h2 class="prime-video-title">{{ recommendedVideo.title }}</h2>
-      <p class="prime-video-name">{{ recommendedVideo.name }}</p>
+      <h2 class="prime-video-title">{{ flatobj.id_100025.title }}</h2>
+      <p class="prime-video-name">{{ flatobj.id_100025.name }}</p>
       <button class="prime-video-button" (click)="videowatch()">Start watching on Prime Video</button>
     </div>
   </div>
 
   <!-- Headphones Section -->
-  <div class="deal-section headphones-section">
-    <h2 class="deal-title">{{ headphones.title }}</h2>
-    <img [src]="headphones.image" alt="Headphones" class="deal-image">
+  <div class="deal-section headphones-section" *ngFor="let item of filterByType('secondraw-secondpart')">
+    <h2 class="deal-title" >{{ item.title }}</h2>
+    <img [src]="item.image" alt="Headphones" class="deal-image" (click)="navigatetodetails(item.id)">
     <a href="#" class="deal-button">Shop Now</a>
   </div>
 
   <!-- Furniture Section -->
   <div class="deal-section furniture-section">
-    <h2 class="deal-title">{{ furniture.title }}</h2>
+    <h2 class="deal-title">Catogories to Explore | popular brand Upto 50% off</h2>
     <div class="furniture-grid">
-      <div class="furniture-item" *ngFor="let item of furniture.items">
-        <img [src]="item.image" alt="{{ item.description }}" class="furniture-image">
-        <p class="furniture-description">{{ item.description }}</p>
+      <div class="furniture-item" *ngFor="let item of filterByType('secondraw-thirdpart')">
+        <img [src]="item.image" alt="{{ item.name }}" class="furniture-image" (click)="navigatetodetails(item.id)">
+        <p class="furniture-description">{{ item.name }}</p>
       </div>
     </div>
     <a href="#" class="deal-button explore-button">Explore all</a>
@@ -44,8 +44,8 @@
     <!-- Carousel Items -->
     <div class="carousel">
       <div class="carousel-items carousel-items1">
-        @for (x of items; track x.name){
-        <img [src]="x.image" [alt]="x.name" class="carousel-image">
+        @for (x of filterByType('secondcarousel'); track x){
+        <img [src]="x.image" [alt]="x.image" class="carousel-image">
         }
       </div>
     </div>
@@ -55,10 +55,7 @@
     </button>
   </div>
 </div>
-
 <!-- first couroserl ends here-->
-
-
 
 <!-- Second carousel starts here-->
 <!-- slide button -->
@@ -73,7 +70,7 @@
     <!-- Carousel Items -->
     <div class="carousel">
       <div class="carousel-items carousel-items2">
-        @for (x of items2; track x.name){
+        @for (x of filterByType('thirdcarousel'); track x){
           <img [src]="x.image" [alt]="x.name" class="carousel-image">
         }
       </div>
@@ -84,25 +81,66 @@
     </button>
   </div>
 </div>
-
 <!-- Second couroserl ends here-->
-<div class="product-card" *ngFor="let product of products">
-  <h3 class="product-title">{{ product.title }}</h3>
-  <div class="product-main">
-    <img [src]="selectedImage" alt="Main Product Image" class="main-image" />
-    <p class="product-description">{{ product.description }}</p>
-    <p class="product-price">₹{{ product.price }}
-      <span class="product-mrp">M.R.P: ₹{{ product.mrp }}</span>
-    </p>
 
-    <div class="thumbnail-slider">
-      <div class="product-view">
-        <!-- Thumbnails -->
-        <div class="thumbnails">
-          <img *ngFor="let image of thumbnails" [src]="image" alt="Thumbnail" class="thumbnail"
-            (click)="onThumbnailClick(image)" />
-        </div>
+  <!-- first Card -->
+
+<div class="container-fluid">
+  <div class="card">
+    <h2>Continue shopping for | Starting ₹199 | Lavie Brand and more</h2>
+    <div class="card-items">
+      @for (x of filterByType('thirddraw-firstpart'); track x){
+      <div class="item" (click)="navigatetodetails(x.id)">
+        <img [src]="x.image" alt="{{x.item}}" class="imagesecc">
+        <p>Starting {{x.price}} | {{x.item}}</p>
       </div>
+      }
     </div>
+    <a [routerLink]="['/seemore']" class="explore-link">See all offers</a>
+  </div>
+
+
+  <!-- second Card -->
+  <div class="card">
+    <h2>Starting ₹19999 | Amazon Brands & more</h2>
+    <div class="card-items">
+      @for (x of filterByType('thirddraw-secondpart'); track x){
+      <div class="item" (click)="navigatetodetails(x.id)">
+        <img [src]="x.image" alt="{{x.item}}">
+        <p>Starting ₹{{x.price}} | {{x.item}}</p>
+      </div>
+      }
+    </div>
+    <a [routerLink]="['/seemore']" class="explore-link">See more</a>
+
+  </div>
+
+  <!--third Card -->
+  <div class="card">
+    <h2>Starting ₹1599 | Brands Watch& more</h2>
+    <div class="card-items">
+      @for (x of filterByType('thirddraw-thirdpart'); track x){
+      <div class="item" (click)="navigatetodetails(x.id)">
+        <img [src]="x.image " alt="{{x.item}}">
+        <p>Starting ₹{{x.price}} | {{x.item}}</p>
+      </div>
+      }
+
+    </div>
+    <a [routerLink]="['/seemore']" class="explore-link">See more</a>
+  </div>
+
+  <!-- fourth Card -->
+  <div class="card">
+    <img src="100062.jpg" alt="Calendar poster" class="calendar-image">
+    <p class="p">New display technology allows us to route display data under active pixels with no distortion,
+      resulting in
+      thinner borders for larger 15.93 cm (6.3″) and 17.43 cm (6.9″) Super Retina XDR displays that feel great in your
+      hand.
+
+      iPhone 16 Pro is splash, water and dust resistant.3 It also has our latest-generation Ceramic Shield material
+      that’s two
+    </p>
+    <p class="coupon">Save ₹5 with coupon</p>
   </div>
 </div>

@@ -1,0 +1,57 @@
+.order-summary {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+  }.order-summary {
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .order-summary h5 {
+    margin-top: 0;
+  }
+  .order-summary table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .order-summary table td,
+  .order-summary table th {
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  .order-summary table th {
+    background-color: #f0f0f0;
+    text-align: left;
+  }
+  .form-section {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .form-section .btn {
+    width: 100%;
+    margin-top: 15px;
+  }
+  .order-summary h3 {
+    margin-top: 0;
+  }
+  .order-summary table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .order-summary table td,
+  .order-summary table th {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  .order-summary table th {
+    text-align: left;
+    background-color: #f0f0f0;
+  }
+  .button-group {
+    text-align: right;
+    margin-top: 20px;
+  }

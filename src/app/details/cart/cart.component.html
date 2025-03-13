@@ -1,0 +1,10 @@
+<div class="cart-items-container">
+  <div class="cart-info" *ngFor="let item of cartItems; let i = index"(click)="navigatetodetails(item.id)" >
+    <img [src]="item.image" alt="{{ item.item }}" class="cart-item-image" />
+    <div class="cart-details">
+      <p>{{ item.item }}</p>
+      <p>{{ item.price }}</p>
+    </div>
+    <button class="remove-button" (click)="removeItem(i)">&times;</button>
+  </div>
+</div>
